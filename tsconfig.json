@@ -1,0 +1,67 @@
+{
+    "compilerOptions": {
+      // Target modern JavaScript
+      "target": "ES2020",
+      
+      // Use ES modules
+      "module": "ESNext",
+      
+      // Module resolution strategy for Node.js-style imports
+      "moduleResolution": "bundler",
+      
+      // Enable all strict type-checking options
+      "strict": true,
+      
+      // Support JSX in .tsx files (Vue uses JSX internally)
+      "jsx": "preserve",
+      
+      // Allow importing .json files
+      "resolveJsonModule": true,
+      
+      // Ensure consistent casing in imports
+      "forceConsistentCasingInFileNames": true,
+      
+      // Allow default imports from modules with no default export
+      "allowSyntheticDefaultImports": true,
+      
+      // Enable interop between CommonJS and ES modules
+      "esModuleInterop": true,
+      
+      // Skip type checking of declaration files for faster builds
+      "skipLibCheck": true,
+      
+      // Don't emit output files (Vite handles this)
+      "noEmit": true,
+      
+      // Allow importing .ts files without extension
+      "allowImportingTsExtensions": true,
+      
+      // Disallow features that require cross-file information for emit
+      "isolatedModules": true,
+      
+      // Path mapping to match vite.config.mjs alias
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      
+      // Include type definitions
+      "types": ["vite/client"],
+      
+      // Standard library to include
+      "lib": ["ES2020", "DOM", "DOM.Iterable"]
+    },
+    
+    // Files to include in compilation
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.vue"
+    ],
+    
+    // Files to exclude from compilation
+    "exclude": [
+      "node_modules",
+      "dist"
+    ]
+  }

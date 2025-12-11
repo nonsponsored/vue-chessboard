@@ -1,0 +1,74 @@
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+}
+
+@layer base {
+    html {
+        --base-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        
+        --color-active: oklch(0.716 0.148 131.5);
+        --color-dark: oklch(0.25 0.02 0);
+        --color-light: oklch(0.98 0 0);
+        --color-shadow: oklch(0 0 0 / 0.25);
+
+        --border-radius: 6px;
+
+        --text-primary: oklch(0 0 0);
+
+        --width-sidebar: 300px;
+        
+        color-scheme: light dark;
+        scroll-behavior: smooth;
+        min-height: 100%;
+        position: relative;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        html {
+            color-scheme:  dark;
+        }
+    }
+
+    body {
+        background-color: oklch(0.95 0 0);
+        color: light-dark(var(--text-primary), var(--text-primary));
+        display: grid;
+        font-family: var(--base-font);
+        line-height: 1;
+        margin: 0;
+        min-height: 100svh;
+        position: relative;
+        -webkit-tap-highlight-color: oklch(0 0 0 / 0);
+        touch-action: manipulation;
+        vertical-align: baseline;
+    }
+
+    :where(h1, h2, h3, h4, h5, h6) {
+		margin-block: 0 0.25em;
+        text-wrap: balance;
+	}
+
+    ol {
+        line-height: 1.5;
+        margin-block: 0 1.5em;
+		margin-inline: 30px 0;
+		padding-inline: 0;
+    }
+}
+
+@layer utilities {
+    .visually-hidden {
+        clip: rect(0 0 0 0);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+}
